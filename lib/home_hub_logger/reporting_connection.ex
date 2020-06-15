@@ -3,7 +3,6 @@ defmodule HomeHubLogger.ReportingConnection do
   use Instream.Connection, otp_app: :home_hub_logger
 
   def insert(%{power_usage: reading}) do
-    IO.inspect(reading, label: ReportingConnection)
     data_point = %{tags: %{host: host()}, measurement: "power_usage", fields: %{value: reading}}
     write(%{points: [data_point], database: "climate"})
   end

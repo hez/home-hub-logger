@@ -21,5 +21,6 @@ config :home_hub_logger, HomeHubLogger.ReportingConnection,
 
 config :rainforest_eagle, :connection,
   mac_id: System.get_env("RAINFOREST_EAGLE_MACID"),
-  url: "http://#{System.get_env("RAINFOREST_EAGLE_HOST")}/cgi-bin/post_manager",
-  basic_auth: System.get_env("RAINFOREST_EAGLE_USER_PASS")
+  host: System.get_env("RAINFOREST_EAGLE_HOST"),
+  username: System.get_env("RAINFOREST_EAGLE_USERNAME"),
+  password: System.get_env("RAINFOREST_EAGLE_PASSWORD")

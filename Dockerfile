@@ -1,5 +1,10 @@
 FROM elixir:1.10.3
 
+ENV MIX_ENV prod
+COPY . /app
+WORKDIR /app
+RUN ls -la
+RUN mix local.hex --force && mix local.rebar --force
 RUN mix deps.get && mix compile
 
-CMD mix --no-halt
+CMD mix run --no-halt

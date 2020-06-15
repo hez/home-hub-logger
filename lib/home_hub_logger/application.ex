@@ -15,6 +15,8 @@ defmodule HomeHubLogger.Application do
       RainforestEagle.Server,
     ]
     HomeHubLogger.EnergyLogger.attach()
+    Logger.warn(inspect(Application.get_all_env(:rainforest_eagle)))
+    Logger.warn(inspect(Application.get_all_env(:home_hub_logger)))
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options

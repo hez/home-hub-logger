@@ -5,7 +5,9 @@ defmodule HomeHubLogger.EnergyLogger do
   def log_usage([:sensor, :rainforest_eagle, :read], measurements, metadata, _conf) do
     Logger.info(inspect(measurements))
     Logger.info(inspect(metadata))
-    HomeHubLogger.ReportingConnection.insert(%{power_usage: measurements.usage})
+    res = HomeHubLogger.ReportingConnection.insert(%{power_usage: measurements.usage})
+    Logger.info(inspect(res))
+    res
   end
 
   def attach do
