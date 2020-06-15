@@ -1,21 +1,37 @@
 # HomeHubLogger
 
-**TODO: Add description**
+Logs various sensors back to a central influxdb.
+
+Currently logs:
+- [Rainforest Eagle](https://github.com/hez/rainforest-eagle)
+
+TODO:
+- Various homebridge sensors
+- Outdoor weather sensor
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `home_hub_logger` to your list of dependencies in `mix.exs`:
+This could be run as a stand alone app, but we deploy it using Docker.
 
-```elixir
-def deps do
-  [
-    {:home_hub_logger, "~> 0.1.0"}
-  ]
-end
+Example
+
+docker-compose.yaml example config
 ```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/home_hub_logger](https://hexdocs.pm/home_hub_logger).
-
+services:
+  hublogger:
+    build:
+      context: ./home_hub_logger
+    volumes:
+      - ./home_hub_logger:/app
+    network_mode: host
+    restart: always
+    environment:
+      - MIX_ENV=prod
+      - RAINFOREST_EAGLE_HOST=http://<host>
+      - RAINFOREST_EAGLE_MACID=<mac id>
+      - RAINFOREST_EAGLE_USERNAME=<username>
+      - RAINFOREST_EAGLE_PASSWORD=<password>
+      - INFLUXDB_HOST=<host>
+      - INFLUXDB_USERNAME=<username>
+      - INFLUXDB_PASSWORD=<password>
+```
