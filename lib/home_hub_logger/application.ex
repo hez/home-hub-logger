@@ -11,9 +11,10 @@ defmodule HomeHubLogger.Application do
 
     children = [
       # Start the PubSub system
-      HomeHubLogger.ReportingConnection,
-      RainforestEagle.Server,
+      HomeHubLogger.ReportingConnection
     ]
+
+    RainforestEagle.Telemetry.start_polling()
     HomeHubLogger.EnergyLogger.attach()
     Logger.warn(inspect(Application.get_all_env(:rainforest_eagle)))
     Logger.warn(inspect(Application.get_all_env(:home_hub_logger)))

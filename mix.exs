@@ -27,7 +27,7 @@ defmodule HomeHubLogger.MixProject do
       {:dialyxir, "~> 1.0.0-rc.4", only: :dev, runtime: false},
       # Everything else
       {:instream, "~> 0.22"},
-      {:rainforest_eagle, github: "hez/rainforest-eagle", tag: "v0.2.0"}
+      {:rainforest_eagle, github: "hez/rainforest-eagle", tag: "v0.3.0"}
     ]
   end
 end
