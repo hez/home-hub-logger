@@ -7,4 +7,4 @@ RUN ls -la
 RUN mix local.hex --force && mix local.rebar --force
 RUN mix deps.get && mix compile
 
-CMD mix run --no-halt
+CMD mix deps.get && mix run --no-halt
