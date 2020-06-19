@@ -23,4 +23,6 @@ config :rainforest_eagle, :connection,
   mac_id: System.get_env("RAINFOREST_EAGLE_MACID"),
   host: System.get_env("RAINFOREST_EAGLE_HOST"),
   username: System.get_env("RAINFOREST_EAGLE_USERNAME"),
-  password: System.get_env("RAINFOREST_EAGLE_PASSWORD")
+  password: System.get_env("RAINFOREST_EAGLE_PASSWORD"),
+  refresh_interval:
+    "RAINFOREST_EAGLE_REFRESH_INTERVAL" |> System.get_env("120") |> String.to_integer()
