@@ -15,7 +15,9 @@ defmodule HomeHubLogger.Application do
     ]
 
     RainforestEagle.Telemetry.start_polling()
+    PhosconAPI.Telemetry.start_polling()
     HomeHubLogger.EnergyLogger.attach()
+    HomeHubLogger.TemperatureLogger.attach()
     Logger.warn(inspect(Application.get_all_env(:rainforest_eagle)))
     Logger.warn(inspect(Application.get_all_env(:home_hub_logger)))
 

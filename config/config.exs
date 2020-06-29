@@ -26,3 +26,7 @@ config :rainforest_eagle, :connection,
   password: System.get_env("RAINFOREST_EAGLE_PASSWORD"),
   refresh_interval:
     "RAINFOREST_EAGLE_REFRESH_INTERVAL" |> System.get_env("120") |> String.to_integer()
+
+config :phoscon_api, :connection,
+  host: System.get_env("PHOSCON_HOST"),
+  api_key: System.get_env("PHOSCON_API_KEY")
