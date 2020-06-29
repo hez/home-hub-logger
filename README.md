@@ -4,6 +4,7 @@ Logs various sensors back to a central influxdb.
 
 Currently logs:
 - [Rainforest Eagle](https://github.com/hez/rainforest-eagle)
+- [ZigBee Sensors](https://github.com/hez/phoscon-api)
 
 TODO:
 - Various homebridge sensors
@@ -16,6 +17,7 @@ This could be run as a stand alone app, but we deploy it using Docker.
 Example
 
 docker-compose.yaml example config
+
 ```
 services:
   hublogger:
@@ -34,4 +36,6 @@ services:
       - INFLUXDB_HOST=<host>
       - INFLUXDB_USERNAME=<username>
       - INFLUXDB_PASSWORD=<password>
+      - PHOSCON_HOST=http://<host>
+      - PHOSCON_API_KEY=<api_key>
 ```

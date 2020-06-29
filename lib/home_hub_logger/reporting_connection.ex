@@ -18,7 +18,7 @@ defmodule HomeHubLogger.ReportingConnection do
     write(%{points: [humid_data], database: "climate"})
   end
 
-  def insert(v, k), do: Logger.warn("unhandled reporting insert #{inspect(v)}")
+  def insert(v, _k), do: Logger.warn("unhandled reporting insert #{inspect(v)}")
 
   def host do
     :home_hub_logger
