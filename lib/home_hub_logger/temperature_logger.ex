@@ -6,7 +6,7 @@ defmodule HomeHubLogger.TemperatureLogger do
   def log_usage([:phoscon, :sensor, :read], measurements, metadata, _conf) do
     Logger.info("Temperatures: #{inspect(measurements)} with #{inspect(metadata)}")
     res = HomeHubLogger.ReportingConnection.insert(measurements, metadata.host)
-    Logger.debug("EnergyLogger insert response: #{inspect(res)}")
+    Logger.debug("TemperatureLogger insert response: #{inspect(res)}")
     res
   end
 
