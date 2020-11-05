@@ -1,4 +1,4 @@
-FROM elixir:1.10.3
+FROM elixir:1.11.2
 
 ENV MIX_ENV prod
 COPY . /app
