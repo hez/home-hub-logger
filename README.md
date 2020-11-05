@@ -39,3 +39,9 @@ services:
       - PHOSCON_HOST=http://<host>
       - PHOSCON_API_KEY=<api_key>
 ```
+
+### Phoscon Authentication
+
+`curl -d "{\"devicetype\": \"hublogger\"}" <deconz/phoscon host>/api`
+
+Take the returned "username" and subsitute it in your docker-compose config
