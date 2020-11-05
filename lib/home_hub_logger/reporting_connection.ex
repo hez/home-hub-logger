@@ -18,6 +18,11 @@ defmodule HomeHubLogger.ReportingConnection do
     write(%{points: [humid_data], database: "climate"})
   end
 
+  def insert(%{pressure: pre}, host) do
+    pressure_data = %{tags: %{host: host}, measurement: "pressure", fields: %{value: pre}}
+    write(%{points: [pressure_data], database: "climate"})
+  end
+
   def insert(v, _k), do: Logger.warn("unhandled reporting insert #{inspect(v)}")
 
   def host do
