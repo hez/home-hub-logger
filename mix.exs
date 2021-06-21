@@ -7,7 +7,11 @@ defmodule HomeHubLogger.MixProject do
       version: "0.1.0",
       elixir: "~> 1.10",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      dialyzer: [
+        plt_add_apps: [:mix, :ex_unit],
+        plt_file: {:no_warn, "priv/plts/dialyzer.plt"}
+      ]
     ]
   end
 
@@ -24,7 +28,7 @@ defmodule HomeHubLogger.MixProject do
     [
       # Dev and test
       {:credo, "~> 1.3.0", only: [:dev, :test], runtime: false},
-      {:dialyxir, "~> 1.0.0-rc.4", only: :dev, runtime: false},
+      {:dialyxir, "~> 1.1.0", only: [:dev, :test], runtime: false},
       # Everything else
       {:instream, "~> 1.0"},
       {:phoscon_api, github: "hez/phoscon-api", tag: "v0.3.0"},
