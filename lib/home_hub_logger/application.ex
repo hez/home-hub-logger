@@ -11,11 +11,11 @@ defmodule HomeHubLogger.Application do
 
     children = [
       # Start the PubSub system
-      HomeHubLogger.ReportingConnection
+      HomeHubLogger.ReportingConnection,
+      PhosconAPI.Telemetry.child_config(),
+      RainforestEagle.Telemetry.child_config()
     ]
 
-    RainforestEagle.Telemetry.start_polling()
-    PhosconAPI.Telemetry.start_polling()
     HomeHubLogger.EnergyLogger.attach()
     HomeHubLogger.TemperatureLogger.attach()
     Logger.warn(inspect(Application.get_all_env(:rainforest_eagle)))
