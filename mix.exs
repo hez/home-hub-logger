@@ -31,7 +31,7 @@ defmodule HomeHubLogger.MixProject do
       {:dialyxir, "~> 1.1.0", only: [:dev, :test], runtime: false},
       # Everything else
       {:instream, "~> 1.0"},
-      {:phoscon_api, github: "hez/phoscon-api", tag: "v0.3.0"},
+      {:phoscon_api, github: "hez/phoscon-api", tag: "v0.3.1"},
       {:rainforest_eagle, github: "hez/rainforest-eagle", tag: "v0.4.0"}
     ]
   end

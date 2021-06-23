@@ -1,0 +1,21 @@
+version: '3.2'
+services:
+  app:
+    image: hezr/home_hub_logger
+    network_mode: host
+    restart: always
+    environment:
+      - RAINFOREST_EAGLE_HOST=${RAINFOREST_EAGLE_HOST}
+      - RAINFOREST_EAGLE_MACID=${RAINFOREST_EAGLE_MACID}
+      - RAINFOREST_EAGLE_USERNAME=${RAINFOREST_EAGLE_USERNAME}
+      - RAINFOREST_EAGLE_PASSWORD=${RAINFOREST_EAGLE_PASSWORD}
+      - RAINFOREST_EAGLE_REFRESH_INTERVAL=${RAINFOREST_EAGLE_REFRESH_INTERVAL}
+      - INFLUXDB_HOST=${INFLUXDB_HOST}
+      - INFLUXDB_USERNAME=${INFLUXDB_USERNAME}
+      - INFLUXDB_PASSWORD=${INFLUXDB_PASSWORD}
+      - PHOSCON_HOST=${PHOSCON_HOST}
+      - PHOSCON_API_KEY=${PHOSCON_API_KEY}
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"

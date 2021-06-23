@@ -29,9 +29,8 @@ RUN mix compile
 RUN mix release
 
 # prepare release image
-FROM alpine:3.9 AS app
-RUN apk add --no-cache bash openssl ncurses-libs
-RUN apk add --no-cache libstdc++
+FROM alpine:3.14 AS app
+RUN apk add --no-cache bash openssl libgcc libstdc++ ncurses-libs
 
 WORKDIR /app
 
@@ -42,3 +41,5 @@ USER nobody:nobody
 COPY --from=build --chown=nobody:nobody /app/_build/prod/rel/home_hub_logger ./
 
 ENV HOME=/app
+
+CMD ["bin/home_hub_logger", "start"]
