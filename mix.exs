@@ -27,7 +27,7 @@ defmodule HomeHubLogger.MixProject do
   defp deps do
     [
       # Dev and test
-      {:credo, "~> 1.5.6", only: [:dev, :test], runtime: false},
+      {:credo, "~> 1.6.0", only: [:dev, :test], runtime: false},
       {:dialyxir, "~> 1.1.0", only: [:dev, :test], runtime: false},
       # Everything else
       {:instream, "~> 1.0"},
