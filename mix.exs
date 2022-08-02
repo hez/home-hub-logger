@@ -30,7 +30,7 @@ defmodule HomeHubLogger.MixProject do
       {:credo, "~> 1.6.0", only: [:dev, :test], runtime: false},
       {:dialyxir, "~> 1.2.0", only: [:dev, :test], runtime: false},
       # Everything else
-      {:instream, "~> 1.0"},
+      {:instream, "~> 2.1"},
       {:phoscon_api, github: "hez/phoscon-api", tag: "v0.3.4"},
       {:rainforest_eagle, github: "hez/rainforest-eagle", tag: "v0.4.0"}
     ]
