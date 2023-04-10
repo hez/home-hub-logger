@@ -28,7 +28,7 @@ defmodule HomeHubLogger.MixProject do
     [
       # Dev and test
       {:credo, "~> 1.6.0", only: [:dev, :test], runtime: false},
-      {:dialyxir, "~> 1.2.0", only: [:dev, :test], runtime: false},
+      {:dialyxir, "~> 1.3.0", only: [:dev, :test], runtime: false},
       # Everything else
       {:instream, "~> 1.0"},
       {:phoscon_api, github: "hez/phoscon-api", tag: "v0.3.4"},
